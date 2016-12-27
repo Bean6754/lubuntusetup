@@ -22,13 +22,13 @@ fi
 echo "Starting..."
 
 
-sudo cp -r sources.list /etc/apt/sources.list
+sudo cp -r configs/sources.list /etc/apt/sources.list
 
 clear
 
 sudo apt-get update -y
 sudo apt-get purge -y file-roller lxterminal firefox abiword gnumeric mplayer
-sudo apt-get install -y aptitude git wget curl vim i3 i3lock i3status i3blocks fonts-font-awesome lubuntu-restricted-extras lubuntu-restricted-addons vlc p7zip-full unrar rar build-essential redshift chromium-browser libreoffice gimp xarchiver software-properties-gtk steam transmission-gtk transmission-cli default-jdk
+sudo apt-get install -y aptitude git wget curl vim rxvt-unicode i3 i3lock i3status i3blocks fonts-font-awesome lubuntu-restricted-extras lubuntu-restricted-addons vlc p7zip-full unrar rar build-essential redshift chromium-browser libreoffice gimp xarchiver software-properties-gtk steam transmission-gtk transmission-cli default-jdk
 
 clear
 
@@ -37,13 +37,16 @@ echo "Launching software-properties-gtk to assist you in driver installation."
 
 software-properties-gtk
 
-echo "Backing up previous i3configs."
-mkdir -p ~/i3backups/
-cp -r ~/.config/i3/* ~/i3backups/
+echo "Backing up previous config files to '~/configbackups/."
+mkdir -p ~/configbackups/i3/
+cp -r ~/.config/i3/* ~/configbackups/i3/
+cp -r ~/.Xdefaults ~/configbackups/
 echo "Deleting i3 config folder."
 rm -rf ~/.config/i3/
 echo "Copying i3 config files to ~/.config/i3/
 mkdir -p ~/.config/i3/
-cp -r i3/* ~/.config/i3/
+cp -r configs/i3/* ~/.config/i3/
+echo "Copying '.Xdefaults' rxvt-unicode config file to ~/"
+cp -r configs/.Xdefaults ~/.Xdefaults
 
 echo "All done!"
