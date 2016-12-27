@@ -28,50 +28,50 @@ else
   echo "'configs' directory found! Continuing.." 1>&2
 fi
 #Check if the files in there exist.
-if [ ! -f "configs/.Xdefaults"]; then
+if [ ! -f "configs/.Xdefaults" ]; then
   echo "'.Xdefaults' config file was not found. Exiting.." 1>&2
   exit 1
 else
   echo "'.Xdefaults' config file was found! Continuing.." 1>&2
 fi
-if [ ! -f "configs/.bash_profile"]; then
+if [ ! -f "configs/.bash_profile" ]; then
   echo "'.bash_profile' config file was not found. Exiting.." 1>&2
   exit 1
 else
   echo "'.bash_profile' config file was found! Continuing.." 1>&2
 fi
 #Check if 'i3' config directory exists or not.
-if [ ! -d "config/i3" ]; then
+if [ ! -d "configs/i3" ]; then
   echo "'i3' config directory not found. Exiting.." 1>&2
   exit 1
 else
   echo "'i3' config directory found! Continuing.." 1>&2
 fi
-if [ ! -f "configs/i3/config"]; then
+if [ ! -f "configs/i3/config" ]; then
   echo "'i3/config' config file was not found. Exiting.." 1>&2
   exit 1
 else
   echo "'i3/config' config file was found! Continuing.." 1>&2
 fi
-if [ ! -f "configs/i3/i3blocks.conf"]; then
+if [ ! -f "configs/i3/i3blocks.conf" ]; then
   echo "'i3/i3blocks.conf' config file was not found. Exiting.." 1>&2
   exit 1
 else
   echo "'i3/i3blocks.conf' config file was found! Continuing.." 1>&2
 fi
-if [ ! -f "configs/i3/exit_menu.sh"]; then
+if [ ! -f "configs/i3/exit_menu.sh" ]; then
   echo "'i3/exit_menu.sh' config file was not found. Exiting.." 1>&2
   exit 1
 else
   echo "'i3/exit_menu.sh' config file was found! Continuing.." 1>&2
 fi
-if [ ! -f "configs/.vimrc"]; then
+if [ ! -f "configs/.vimrc" ]; then
   echo "'.vimrc' config file was not found. Exiting.." 1>&2
   exit 1
 else
   echo "'.vimrc' config file was found! Continuing.." 1>&2
 fi
-if [ ! -f "configs/.xinitrc"]; then
+if [ ! -f "configs/.xinitrc" ]; then
   echo "'.xinitrc' config file was not found. Exiting.." 1>&2
   exit 1
 else
