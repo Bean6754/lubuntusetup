@@ -65,12 +65,6 @@ if [ ! -f "configs/i3/exit_menu.sh" ]; then
 else
   echo "'i3/exit_menu.sh' config file was found! Continuing.." 1>&2
 fi
-if [ ! -f "configs/sudoers1" ]; then
-  echo "'sudoers1' config file was not found. Exiting.." 1>&2
-  exit 1
-else
-  echo "'sudoers1' config file was found! Continuing.." 1>&2
-fi
 if [ ! -f "configs/.vimrc" ]; then
   echo "'.vimrc' config file was not found. Exiting.." 1>&2
   exit 1
