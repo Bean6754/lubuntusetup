@@ -120,7 +120,7 @@ software-properties-gtk
 
 clear
 
-echo "Please set a root password (and remember it) for the next step."
+echo "Please set a root password (and remember it!)"
 sudo passwd root
 
 echo "Backing up previous config files to '~/configbackups/."
@@ -144,13 +144,6 @@ cp -r configs/.bash_profile ~/.bash_profile
 echo "Copying i3 config files to '~/.config/i3/'"
 mkdir -p ~/.config/i3/
 cp -r configs/i3/* ~/.config/i3/
-
-sudo rm -rf /etc/sudoers
-su -c 'cp -r configs/sudoers1 /etc/sudoers'
-su -c 'echo $USER "ALL=(ALL:ALL) ALL" >> configs/sudoers'
-su -c 'echo "" >> configs/sudoers'
-su -c 'echo '
-
 echo "Copying '.vimrc' vim config file to '~/.vimrc' and to '/root/.vimrc'"
 cp -r configs/.vimrc ~/.vimrc
 sudo cp -r configs/.vimrc /root/.vimrc
