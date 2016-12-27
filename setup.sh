@@ -22,13 +22,13 @@ fi
 echo "Starting..."
 
 
-cp -r sources.list /etc/apt/sources.list
+sudo cp -r sources.list /etc/apt/sources.list
 
 clear
 
-apt-get update -y
-apt-get purge -y file-roller lxterminal firefox abiword gnumeric mplayer
-apt-get install -y aptitude git wget curl vim i3 i3lock i3status i3blocks fonts-font-awesome lubuntu-restricted-extras lubuntu-restricted-addons vlc p7zip-full unrar rar build-essential chromium-browser libreoffice gimp xarchiver software-properties-gtk steam transmission-gtk transmission-cli default-jdk
+sudo apt-get update -y
+sudo apt-get purge -y file-roller lxterminal firefox abiword gnumeric mplayer
+sudo apt-get install -y aptitude git wget curl vim i3 i3lock i3status i3blocks fonts-font-awesome lubuntu-restricted-extras lubuntu-restricted-addons vlc p7zip-full unrar rar build-essential chromium-browser libreoffice gimp xarchiver software-properties-gtk steam transmission-gtk transmission-cli default-jdk
 
 clear
 
@@ -37,6 +37,13 @@ echo "Launching software-properties-gtk to assist you in driver installation."
 
 software-properties-gtk
 
-echo "Copying i3 'config' to ~/.config/
+echo "Backing up previous i3configs."
+mkdir -p ~/i3backups/
+cp -r ~/.config/i3/* ~/i3backups/
+echo "Deleting i3 config folder."
+rm -rf ~/.config/i3/
+echo "Copying i3 config files to ~/.config/i3/
+mkdir -p ~/.config/i3/
+cp -r i3/* ~/.config/i3/
 
 echo "All done!"
