@@ -77,7 +77,19 @@ if [ ! -f "configs/.xinitrc" ]; then
 else
   echo "'.xinitrc' config file was found! Continuing.." 1>&2
 fi
-
+#Check if 'Pictures' directory exists.
+if [ ! -d "Pictures" ]; then
+  echo "'Pictures' directory not found. Exiting.." 1>&2
+  exit 1
+else
+  echo "'Pictures' directory found! Continuing.." 1>&2
+fi
+if [ ! -f "Pictures/wave-1913559.jpg" ]; then
+  echo "'wave-1913559.jpg' was not found. Exiting.." 1>&2
+  exit 1
+else
+  echo "'wave-1913559.jpg' was found! Continuing.." 1>&2
+fi
 #Check that there is a valid internet connection by checking 'http://google.com/'
 echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1
 
@@ -143,6 +155,9 @@ cp -r configs/.vimrc ~/.vimrc
 sudo cp -r configs/.vimrc /root/.vimrc
 echo "Copying '.xinitrc' xorg config file to '~/.xinitrc'"
 cp -r configs/.xinitrc ~/.xinitrc
+#Copy wallpaper over to '~/Pictures' and renme it as 'Wallpaper.jpg', so feh can use it as the wallpaper for i3.
+mkdir -p ~/Pictures/
+cp -r Pictures/wave-1913559.jpg ~/Pictures/Wallpaper.jpg
 
 echo "All done!"
 
