@@ -3,5 +3,3 @@
 #
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-
-startx
