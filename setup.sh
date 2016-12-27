@@ -96,7 +96,9 @@ clear
 
 sudo apt-get update -y
 sudo apt-get purge -y lubuntu-desktop lightdm file-roller lxterminal firefox abiword gnumeric mplayer
-sudo apt-get install -y aptitude git wget curl vim rxvt-unicode i3 i3lock i3status i3blocks fonts-font-awesome lubuntu-restricted-extras lubuntu-restricted-addons vlc p7zip-full unrar rar build-essential redshift chromium-browser libreoffice gimp xarchiver software-properties-gtk steam transmission-gtk transmission-cli default-jdk qt5-default virtualbox
+sudo apt-get install -y aptitude git wget curl vim rxvt-unicode i3 i3lock i3status i3blocks fonts-font-awesome lubuntu-restricted-extras lubuntu-restricted-addons vlc p7zip-full unrar rar build-essential redshift chromium-browser libreoffice gimp xarchiver software-properties-gtk steam transmission-gtk transmission-cli default-jdk qt5-default virtualbox alsa-base alsa-utils pulseaudio pavucontrol libdvd-pkg libbluray1
+sudo dpkg-reconfigure libdvd-pkg
+sudo apt-get autoremove -y
 
 sudo usermod -a -G vboxusers $USER
 
@@ -135,3 +137,8 @@ echo "Copying '.xinitrc' xorg config file to '~/.xinitrc'"
 cp -r configs/.xinitrc ~/.xinitrc
 
 echo "All done!"
+
+sleep 4s
+
+echo "Rebooting PC."
+sudo reboot
