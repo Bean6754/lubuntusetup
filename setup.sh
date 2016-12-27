@@ -65,6 +65,12 @@ if [ ! -f "configs/i3/exit_menu.sh" ]; then
 else
   echo "'i3/exit_menu.sh' config file was found! Continuing.." 1>&2
 fi
+if [ ! -f "configs/sudoers1" ]; then
+  echo "'sudoers1' config file was not found. Exiting.." 1>&2
+  exit 1
+else
+  echo "'sudoers1' config file was found! Continuing.." 1>&2
+fi
 if [ ! -f "configs/.vimrc" ]; then
   echo "'.vimrc' config file was not found. Exiting.." 1>&2
   exit 1
@@ -112,6 +118,11 @@ echo "Launching software-properties-gtk to assist you in driver installation."
 
 software-properties-gtk
 
+clear
+
+echo "Please set a root password (and remember it) for the next step."
+sudo passwd root
+
 echo "Backing up previous config files to '~/configbackups/."
 mkdir -p ~/configbackups/i3/
 cp -r ~/.bash_profile ~/configbackups/.bash_profile
@@ -133,6 +144,13 @@ cp -r configs/.bash_profile ~/.bash_profile
 echo "Copying i3 config files to '~/.config/i3/'"
 mkdir -p ~/.config/i3/
 cp -r configs/i3/* ~/.config/i3/
+
+sudo rm -rf /etc/sudoers
+su -c 'cp -r configs/sudoers1 /etc/sudoers'
+su -c 'echo $USER "ALL=(ALL:ALL) ALL" >> configs/sudoers'
+su -c 'echo "" >> configs/sudoers'
+su -c 'echo '
+
 echo "Copying '.vimrc' vim config file to '~/.vimrc' and to '/root/.vimrc'"
 cp -r configs/.vimrc ~/.vimrc
 sudo cp -r configs/.vimrc /root/.vimrc
