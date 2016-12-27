@@ -156,6 +156,7 @@ sudo cp -r configs/.vimrc /root/.vimrc
 echo "Copying '.xinitrc' xorg config file to '~/.xinitrc'"
 cp -r configs/.xinitrc ~/.xinitrc
 #Copy wallpaper over to '~/Pictures' and renme it as 'Wallpaper.jpg', so feh can use it as the wallpaper for i3.
+## Wallpaper link: https://pixabay.com/en/wave-atlantic-pacific-ocean-huge-1913559/
 mkdir -p ~/Pictures/
 cp -r Pictures/wave-1913559.jpg ~/Pictures/Wallpaper.jpg
 
