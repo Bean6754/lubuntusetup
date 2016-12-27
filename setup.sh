@@ -29,12 +29,66 @@ else
 fi
 #Check if the files in there exist.
 if [ ! -f "config/.Xdefaults"]; then
-  echo "'.Xdefaults' file was not found. Exiting.." 1>&2
+  echo "'.Xdefaults' config file was not found. Exiting.." 1>&2
   exit 1
 else
-  echo "'.Xdefaults' file was found! Continuing.." 1>&2
+  echo "'.Xdefaults' config file was found! Continuing.." 1>&2
+fi
+if [ ! -f "config/.bash_profile"]; then
+  echo "'.bash_profile' config file was not found. Exiting.." 1>&2
+  exit 1
+else
+  echo "'.bash_profile' config file was found! Continuing.." 1>&2
+fi
+#Check if 'i3' config directory exists or not.
+if [ ! -d "config/i3" ]; then
+  echo "'i3' config directory not found. Exiting.." 1>&2
+  exit 1
+else
+  echo "'i3' config directory found! Continuing.." 1>&2
+fi
+if [ ! -f "config/i3/config"]; then
+  echo "'i3/config' config file was not found. Exiting.." 1>&2
+  exit 1
+else
+  echo "'i3/config' config file was found! Continuing.." 1>&2
+fi
+if [ ! -f "config/i3/i3blocks.conf"]; then
+  echo "'i3/i3blocks.conf' config file was not found. Exiting.." 1>&2
+  exit 1
+else
+  echo "'i3/i3blocks.conf' config file was found! Continuing.." 1>&2
+fi
+if [ ! -f "config/i3/exit_menu.sh"]; then
+  echo "'i3/exit_menu.sh' config file was not found. Exiting.." 1>&2
+  exit 1
+else
+  echo "'i3/exit_menu.sh' config file was found! Continuing.." 1>&2
+fi
+if [ ! -f "config/.vimrc"]; then
+  echo "'.vimrc' config file was not found. Exiting.." 1>&2
+  exit 1
+else
+  echo "'.vimrc' config file was found! Continuing.." 1>&2
+fi
+if [ ! -f "config/.xinitrc"]; then
+  echo "'.xinitrc' config file was not found. Exiting.." 1>&2
+  exit 1
+else
+  echo "'.xinitrc' config file was found! Continuing.." 1>&2
 fi
 
+#Check that there is a valid internet connection by checking 'http://google.com/'
+echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1
+
+if [ $? -eq 0 ]; then
+    echo "There is a valid internet connection (to 'http://google.com/'! Continuing.." 1>&2
+else
+    echo "No internet connection (to 'http://google.com/') was found. Exiting.." 1>&2
+    exit 1
+fi
+
+sleep 5s
 
 sudo cp -r configs/sources.list /etc/apt/sources.list
 
