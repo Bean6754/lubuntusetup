@@ -110,8 +110,7 @@ sudo rm -rf /var/cache/apt/archives/lock
 sudo rm -rf /var/lib/dpkg/lock
 echo "Installing packages using apt (apt-get)."
 sudo apt-get update -y
-sudo apt-get purge -y lubuntu-desktop lightdm file-roller lxterminal firefox abiword gnumeric mplayer
-sudo apt-get install -y aptitude git wget curl vim rxvt-unicode i3 i3lock i3status i3blocks suckless-tools fonts-font-awesome lubuntu-restricted-extras lubuntu-restricted-addons vlc p7zip-full unrar rar build-essential redshift chromium-browser libreoffice gimp xarchiver software-properties-gtk steam transmission-gtk transmission-cli default-jdk qt5-default virtualbox alsa-base alsa-utils pulseaudio pavucontrol libdvd-pkg libbluray1
+sudo apt-get install -y aptitude git wget curl vim rxvt-unicode i3 i3lock i3status i3blocks suckless-tools fonts-font-awesome ubuntu-restricted-extras ubuntu-restricted-addons lxappearance vlc p7zip-full unrar rar build-essential redshift chromium-browser libreoffice gimp xarchiver software-properties-gtk steam transmission-gtk transmission-cli default-jdk qt5-default virtualbox alsa-base alsa-utils pulseaudio pavucontrol libdvd-pkg libbluray1
 sudo dpkg-reconfigure libdvd-pkg
 sudo apt-get autoremove -y
 
@@ -120,9 +119,7 @@ sudo usermod -a -G vboxusers $USER
 clear
 
 echo "NOTE: You will still have to install your specific drivers yourself. (amd64-microcode, intel-microcode, nvidia-driver, etc.."
-echo "Launching software-properties-gtk to assist you in driver installation."
-
-software-properties-gtk
+echo "Launch 'software-properties-gtk' (in Xorg) to assist you in driver installation."
 
 clear
 
