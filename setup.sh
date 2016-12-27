@@ -116,7 +116,7 @@ cp -r ~/.config/i3/* ~/configbackups/i3/
 cp -r ~/.vimrc ~/configbackups/.vimrc
 cp -r ~/.Xdefaults ~/configbackups/.Xdefaults
 cp -r ~/.xinitrc ~/configbackups/.xinitrc
-echo "Deleting potentially existing config files.
+echo "Deleting potentially existing config files."
 rm -rf ~/.Xdefaults
 rm -rf ~/.bash_profile
 rm -rf ~/.config/i3/
