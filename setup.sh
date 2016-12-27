@@ -27,7 +27,7 @@ sudo cp -r configs/sources.list /etc/apt/sources.list
 clear
 
 sudo apt-get update -y
-sudo apt-get purge -y file-roller lxterminal firefox abiword gnumeric mplayer
+sudo apt-get purge -y lubuntu-desktop lightdm file-roller lxterminal firefox abiword gnumeric mplayer
 sudo apt-get install -y aptitude git wget curl vim rxvt-unicode i3 i3lock i3status i3blocks fonts-font-awesome lubuntu-restricted-extras lubuntu-restricted-addons vlc p7zip-full unrar rar build-essential redshift chromium-browser libreoffice gimp xarchiver software-properties-gtk steam transmission-gtk transmission-cli default-jdk
 
 clear
@@ -39,14 +39,24 @@ software-properties-gtk
 
 echo "Backing up previous config files to '~/configbackups/."
 mkdir -p ~/configbackups/i3/
+cp -r ~/.bash_profile ~/configbackups/.bash_profile
 cp -r ~/.config/i3/* ~/configbackups/i3/
-cp -r ~/.Xdefaults ~/configbackups/
+cp -r ~/.vimrc ~/configbackups/.vimrc
+cp -r ~/.Xdefaults ~/configbackups/.Xdefaults
+cp -r ~/.xinitrc ~/configbackups/.xinitrc
 echo "Deleting i3 config folder."
 rm -rf ~/.config/i3/
-echo "Copying i3 config files to ~/.config/i3/
+echo "Copying '.bash_profile' bash login config to '~/.bash_profile'"
+cp -r configs/.bash_profile ~/.bash_profile
+echo "Copying i3 config files to '~/.config/i3/'"
 mkdir -p ~/.config/i3/
 cp -r configs/i3/* ~/.config/i3/
-echo "Copying '.Xdefaults' rxvt-unicode config file to ~/"
+echo "Copying '.vimrc' vim config file to '~/.vimrc' and to '/root/.vimrc'"
+cp -r configs/.vimrc ~/.vimrc
+sudo cp -r configs/.vimrc /root/.vimrc
+echo "Copying '.Xdefaults' rxvt-unicode config file to '~/.Xdefaults'"
 cp -r configs/.Xdefaults ~/.Xdefaults
+echo "Copying '.xinitrc' xorg config file to '~/.xinitrc'"
+cp -r configs/.xinitrc ~/.xinitrc
 
 echo "All done!"
