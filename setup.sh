@@ -140,5 +140,5 @@ echo "All done!"
 
 sleep 4s
 
-echo "Rebooting PC."
+echo "Rebooting PC... Press Ctrl+C to cancel reboot operation."
 sudo reboot
