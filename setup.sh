@@ -110,7 +110,7 @@ sudo rm -rf /var/cache/apt/archives/lock
 sudo rm -rf /var/lib/dpkg/lock
 echo "Installing packages using apt (apt-get)."
 sudo apt-get update -y
-sudo apt-get install -y aptitude git wget curl vim links ranger w3m rxvt-unicode zsh xorg xinit i3 i3lock i3status i3blocks suckless-tools feh rofi fonts-liberation fonts-dejavu fonts-ubuntu-font-family-console ttf-ubuntu-font-family fonts-font-awesome ubuntu-restricted-extras ubuntu-restricted-addons lxappearance network-manager wpasupplicant wpagui cups vlc p7zip-full unrar rar build-essential redshift chromium-browser libreoffice gimp xarchiver software-properties-gtk steam transmission-gtk transmission-cli default-jdk qt5-default virtualbox alsa-base alsa-utils pulseaudio pavucontrol libdvd-pkg libbluray1
+sudo apt-get install -y aptitude git wget curl vim links ranger w3m rxvt-unicode zsh xorg xinit i3 i3lock i3status i3blocks suckless-tools feh rofi fonts-liberation fonts-dejavu fonts-ubuntu-font-family-console ttf-ubuntu-font-family fonts-font-awesome ubuntu-restricted-extras ubuntu-restricted-addons lxappearance network-manager wpasupplicant wpagui cups gnome-network-admin vlc p7zip-full unrar rar build-essential redshift chromium-browser libreoffice gimp xarchiver software-properties-gtk steam transmission-gtk transmission-cli default-jdk qt5-default virtualbox alsa-base alsa-utils pulseaudio pavucontrol libdvd-pkg libbluray1
 sudo dpkg-reconfigure libdvd-pkg
 sudo apt-get autoremove -y
 
