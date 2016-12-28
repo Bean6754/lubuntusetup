@@ -196,6 +196,15 @@ git clone https://github.com/KittyKatt/screenfetch
 sudo mv screenfetch/screenfetch-dev /usr/local/bin/screenfetch
 sudo chmod +x /usr/local/bin/screenfetch
 
+#Install wine.
+echo "Installing wine.. (Using wine repo.)"
+sudo dpkg --add-architecture i386
+sudo add-apt-repository -y ppa:wine/wine-builds
+sudo apt-get -y update
+sudo apt-get install --install-recommends -y winehq-devel
+# Set up 32bit wine prefix.
+WINEARCH=win32 WINEPREFIX=~/.wine wine wineboot
+
 echo "Setting zsh as the default shell for user: "$USER"."
 chsh -s /bin/zsh
 
