@@ -170,6 +170,12 @@ sudo systemctl start network-manager
 sudo systemctl enable wpa_supplicant
 sudo systemctl start wpa_supplicant
 
+echo "Restarting network connections. (Ethernet then WiFi.)"
+sudo ifdown eno1
+sudo ifup eno1
+sudo ifdown wlo1
+sudo ifup wlo1
+
 echo "Setting zsh as the default shell for user: "$USER"."
 chsh -s /bin/zsh
 
