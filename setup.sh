@@ -160,6 +160,16 @@ cp -r Pictures/wave-1913559.jpg ~/Pictures/Wallpaper.jpg
 echo "Create user directories."
 mkdir -p ~/Desktop/ ~/Documents/ ~/Downloads/ ~/Music/ ~/Public/ ~/Templates/ ~/Videos/ ~/.fonts ~/.icons ~/.themes
 
+echo "Enabling and starting services."
+sudo systemctl enable cups
+sudo systemctl start cups
+sudo systemctl enable networking
+sudo systemctl start networking
+sudo systemctl enable network-manager
+sudo systemctl start network-manager
+sudo systemctl enable wpa_supplicant
+sudo systemctl start wpa_supplicant
+
 echo "Setting zsh as the default shell for user: "$USER"."
 chsh -s /bin/zsh
 
