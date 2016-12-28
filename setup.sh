@@ -211,9 +211,9 @@ echo "Setting zsh as the default shell for user: "$USER"."
 chsh -s /bin/zsh
 
 #Install VirtualBox extention pack.
-echo "Downloading and installing VirtualBox extention pack using 'curl' then 'vboxmanage'."
-curl http://download.virtualbox.org/virtualbox/5.0.24/Oracle_VM_VirtualBox_Extension_Pack-5.0.24.vbox-extpack -o Oracle_VM_VirtualBox_Extension_Pack-5.0.24.vbox-extpack
-sudo vboxmanage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.0.24.vbox-extpack
+#echo "Downloading and installing VirtualBox extention pack using 'curl' then 'vboxmanage'."
+#curl http://download.virtualbox.org/virtualbox/5.0.24/Oracle_VM_VirtualBox_Extension_Pack-5.0.24.vbox-extpack -o Oracle_VM_VirtualBox_Extension_Pack-5.0.24.vbox-extpack
+#sudo vboxmanage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.0.24.vbox-extpack
 
 echo "All done!"
 
