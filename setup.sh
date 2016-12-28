@@ -116,7 +116,7 @@ sudo rm -rf /var/cache/apt/archives/lock
 sudo rm -rf /var/lib/dpkg/lock
 echo "Installing packages using apt (apt-get)."
 sudo apt-get update -y
-sudo apt-get install -y aptitude git wget curl vim dosfstools ntfs-3g mtools aufs-tools btrfs-tools f2fs-tools hfsprogs hfsutils jfsutils nilfs-tools reiser4progs reiserfsprogs squashfs-tools xfsdump xfsprogs links ranger w3m rxvt-unicode zsh xorg xinit i3 i3lock i3status i3blocks suckless-tools feh rofi fonts-liberation fonts-dejavu fonts-ubuntu-font-family-console ttf-ubuntu-font-family fonts-font-awesome ubuntu-restricted-extras ubuntu-restricted-addons gparted lxappearance network-manager wpasupplicant wpagui cups vlc p7zip-full unrar rar build-essential redshift chromium-browser libreoffice gimp xarchiver software-properties-gtk steam transmission-gtk transmission-cli default-jdk qt5-default virtualbox alsa-base alsa-utils pulseaudio pavucontrol libdvd-pkg libbluray1
+sudo apt-get install -y aptitude bc git wget curl vim dosfstools ntfs-3g mtools aufs-tools btrfs-tools f2fs-tools hfsprogs hfsutils jfsutils nilfs-tools reiser4progs reiserfsprogs squashfs-tools xfsdump xfsprogs links ranger w3m rxvt-unicode zsh xorg xinit i3 i3lock i3status i3blocks suckless-tools feh rofi fonts-liberation fonts-dejavu fonts-ubuntu-font-family-console ttf-ubuntu-font-family fonts-font-awesome ubuntu-restricted-extras ubuntu-restricted-addons gparted lxappearance network-manager wpasupplicant wpagui cups vlc p7zip-full unrar rar build-essential redshift chromium-browser libreoffice gimp xarchiver software-properties-gtk steam transmission-gtk transmission-cli default-jdk qt5-default virtualbox alsa-base alsa-utils pulseaudio pavucontrol libdvd-pkg libbluray1
 sudo dpkg-reconfigure libdvd-pkg
 sudo apt-get autoremove -y
 
@@ -189,6 +189,12 @@ sudo systemctl disable NetworkManager-wait-online.service
 
 echo "Copying 'networking.service' config file to '/etc/systemd/system/network-online.target.wants/networking.service'.
 su -c 'cp -r configs/networking.service > /etc/systemd/system/network-online.target.wants/networking.service'
+
+# Install screenfetch to '/usr/local/bin/' using 'git clone'.
+echo "Setting up screenfetch (using 'git clone'.)"
+git clone https://github.com/KittyKatt/screenfetch
+sudo mv screenfetch/screenfetch-dev /usr/local/bin/screenfetch
+sudo chmod +x /usr/local/bin/screenfetch
 
 echo "Setting zsh as the default shell for user: "$USER"."
 chsh -s /bin/zsh
