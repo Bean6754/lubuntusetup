@@ -77,6 +77,12 @@ if [ ! -f "configs/.xinitrc" ]; then
 else
   echo "'.xinitrc' config file was found! Continuing.." 1>&2
 fi
+if [ ! -f "configs/networking.service" ]; then
+  echo "'networking.service' config file was not found. Exiting.." 1>&2
+  exit 1
+else
+  echo "'networking.service' config file was found! Continuing.." 1>&2
+fi
 #Check if 'Pictures' directory exists.
 if [ ! -d "Pictures" ]; then
   echo "'Pictures' directory not found. Exiting.." 1>&2
@@ -175,6 +181,9 @@ sudo ifdown eno1
 sudo ifup eno1
 sudo ifdown wlo1
 sudo ifup wlo1
+
+echo "Copying 'networking.service' config file to '/etc/systemd/system/network-online.target.wants/networking.service'.
+su -c 'cp -r configs/networking.service > /etc/systemd/system/network-online.target.wants/networking.service'
 
 echo "Setting zsh as the default shell for user: "$USER"."
 chsh -s /bin/zsh
