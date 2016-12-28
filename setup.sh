@@ -118,7 +118,7 @@ echo "Installing packages using apt (apt-get)."
 sudo rm -rf /var/lib/apt/lists/*
 sudo apt-get update -y
 sudo apt-get clean -y
-sudo apt-get install -y aptitude bc git wget curl vim dosfstools ntfs-3g mtools aufs-tools btrfs-tools f2fs-tools hfsprogs hfsutils jfsutils nilfs-tools reiser4progs reiserfsprogs squashfs-tools xfsdump xfsprogs links ranger w3m rxvt-unicode zsh xorg xinit i3 i3lock i3status i3blocks suckless-tools feh rofi fonts-liberation fonts-dejavu fonts-ubuntu-font-family-console ttf-ubuntu-font-family fonts-font-awesome ubuntu-restricted-extras ubuntu-restricted-addons gparted lxappearance network-manager wpasupplicant wpagui cups vlc p7zip-full unrar rar build-essential redshift chromium-browser libreoffice gimp xarchiver software-properties-gtk steam transmission-gtk transmission-cli default-jdk qt5-default virtualbox virtualbox-ext-pack alsa-base alsa-utils pulseaudio pavucontrol libdvd-pkg libbluray1
+sudo apt-get install -y aptitude bc git wget curl vim dosfstools ntfs-3g mtools aufs-tools btrfs-tools f2fs-tools hfsprogs hfsutils jfsutils nilfs-tools reiser4progs reiserfsprogs squashfs-tools xfsdump xfsprogs links ranger w3m rxvt-unicode zsh xorg xinit i3 i3lock i3status i3blocks suckless-tools feh rofi fonts-liberation fonts-dejavu fonts-ubuntu-font-family-console ttf-ubuntu-font-family fonts-font-awesome ubuntu-restricted-extras ubuntu-restricted-addons gparted lxappearance network-manager wpasupplicant wpagui cups vlc p7zip-full unrar rar build-essential redshift chromium-browser libreoffice gimp xarchiver software-properties-gtk steam transmission-gtk transmission-cli default-jdk qt5-default virtualbox alsa-base alsa-utils pulseaudio pavucontrol libdvd-pkg libbluray1
 sudo dpkg-reconfigure libdvd-pkg
 sudo apt-get autoremove -y
 
@@ -209,6 +209,11 @@ WINEARCH=win32 WINEPREFIX=~/.wine wine wineboot
 
 echo "Setting zsh as the default shell for user: "$USER"."
 chsh -s /bin/zsh
+
+#Install VirtualBox extention pack.
+echo "Downloading and installing VirtualBox extention pack using 'curl' then 'vboxmanage'."
+curl http://download.virtualbox.org/virtualbox/5.0.24/Oracle_VM_VirtualBox_Extension_Pack-5.0.24.vbox-extpack -o Oracle_VM_VirtualBox_Extension_Pack-5.0.24.vbox-extpack
+sudo vboxmanage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.0.24.vbox-extpack
 
 echo "All done!"
 
